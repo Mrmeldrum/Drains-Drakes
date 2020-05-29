@@ -20,4 +20,22 @@ class Inventory
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM inventory"
+    results = SqlRunner.run(sql)
+    return results.map{|inventory| Inventory.new(inventory)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM inventory WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Inventory.new(results.first)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM inventory"
+    SqlRunner.run(sql)
+  end
+
 end

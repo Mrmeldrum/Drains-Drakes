@@ -26,4 +26,22 @@ class Pc
     @id = SqlRunner.run(sql,values)[0]['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM players"
+    results = SqlRunner.run(sql)
+    return results.map{|player|Pc.new(player)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM players WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql,values)
+    return Pc.new(result.first)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM players"
+    SqlRunner.run(sql)
+  end
+
 end
