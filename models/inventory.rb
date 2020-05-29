@@ -38,4 +38,11 @@ class Inventory
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE inventory SET (potions, weapon, armour)
+           = ($1, $2 ,$3) WHERE id = $4"
+
+    values = [@potions,@weapon,@armour,@id]
+    SqlRunner.run(sql,values)
+  end
 end

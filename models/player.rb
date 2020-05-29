@@ -44,4 +44,12 @@ class Pc
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE players SET (name, race, class, health, inventory_id)
+           = ($1, $2, $3, $4, $5) WHERE id = $6"
+
+    values = [@name,@race,@class,@health,@inventory_id,@id]
+    SqlRunner.run(sql,values)
+  end
+
 end
