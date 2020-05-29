@@ -38,6 +38,12 @@ class Inventory
     SqlRunner.run(sql)
   end
 
+  def delete()
+    sql = "DELETE FROM inventory WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
+  end
+
   def update()
     sql = "UPDATE inventory SET (potions, weapon, armour)
            = ($1, $2 ,$3) WHERE id = $4"
