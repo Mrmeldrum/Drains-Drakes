@@ -11,5 +11,8 @@ inv1.save()
 player1 = Pc.new({"name" => "Gronc", "race" => "Gnome", "class" => "Warrior", "health" => 200, "inventory_id" => inv1.id})
 player1.save()
 
+player2 = Pc.new({"name" => "Gronc", "race" => "Gnome", "class" => "Warrior", "health" => 200, "inventory_id" => inv1.id})
+player2.save()
+
 binding.pry
 nil
