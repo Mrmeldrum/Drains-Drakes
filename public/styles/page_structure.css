@@ -1,0 +1,19 @@
+body {
+  background-image: url('/images/Castle_Background.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: Black;
+  font-family: Luminari, fantasy;
+  text-align: center;
+  padding: 40px;
+  margin: 0px;
+}
+
+#content {
+  background: rgba(192, 192, 192, 0.5);
+  background-size: cover;
+  margin-left: 100px;
+  margin-right: 100px;
+
+
+}

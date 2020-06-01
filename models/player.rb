@@ -8,6 +8,7 @@ class Pc
   attr_accessor :name, :race, :class, :health, :inventory_id
 
   def initialize(options)
+    puts options
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @race = options['race']
@@ -44,9 +45,9 @@ class Pc
     SqlRunner.run(sql)
   end
 
-  def delete()
+  def self.delete(id)
     sql = "DELETE FROM players WHERE id = $1"
-    values = [@id]
+    values = [id]
     SqlRunner.run(sql,values)
 
   end
@@ -57,5 +58,12 @@ class Pc
 
     values = [@name,@race,@class,@health,@inventory_id,@id]
     SqlRunner.run(sql,values)
+  end
+
+  def inventory()
+    sql = "SELECT * FROM inventory WHERE id = $1"
+    values = [@inventory_id]
+    inventory_stock = SqlRunner.run(sql,values)
+    return Inventory.new(inventory_stock.first)
   end
 end

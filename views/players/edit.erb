@@ -1,0 +1,19 @@
+<h1>Please update health below, as well as any items acquired or used</h1>
+
+<form action="/players/<%= @player.id %>" method="post">
+  <h2>Character: <%= @player.name %> the <%= @player.race %> <%= @player.class %></h2>
+  
+  <label for="health">Current Health: </label>
+  <input id="health" type="number" name="health" value="<%= @player.health %>">
+
+  <label for="weapon">Weapon: </label>
+  <input id="weapon" type="text" name="weapon" value="<%= @player.inventory.weapon %>">
+
+  <label for="armour">Armour: </label>
+  <input id="armour" type="text" name="armour" value="<%= @player.inventory.armour %>">
+
+  <label for="potions">Potions: </label>
+  <input id="potions" tpe="text" name="potions" value="<%= @player.inventory.potions %>">
+
+  <input type="submit" value="Update Character">
+</form>
