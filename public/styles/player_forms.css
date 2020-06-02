@@ -1,0 +1,25 @@
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 3px;
+  border: 0.5px black solid;
+}
+
+th {
+  padding: 0px 20px 10px 0px;
+  border-bottom: 1px solid papayawhip;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  transition: all 0.3s;
+}
+
+tr:hover {
+  background-color: rgba(255,255,255,0.5);
+}

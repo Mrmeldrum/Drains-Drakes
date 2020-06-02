@@ -1,35 +1,50 @@
 <h1>Players</h1>
-<form action="/players/new_party" method="post">
+<div>
+  <form action="/players/new_party" method="post">
   <input type="submit" value="Begin New Group">
+  </form>
+
+  <form action="/players/new" method="get">
+    <p></p><input type="submit" value="Create New Character">
+  </form>
+</div>
+<br>
+
+<table class="player">
+  <tr>
+    <th>Name</th>
+    <th>Race</th>
+    <th>Class</th>
+    <th>Health</th>
+    <th>Weapon</th>
+    <th>Armour</th>
+    <th>Potions</th>
+    <th>Update Character</th>
+    <th>Delete Character</th>
+  </tr>
+  <% @players.each do |player| %>
+  <tr>
+    <td><%= player.name() %></td>
+    <td><%= player.race() %></td>
+    <td><%= player.class()%></td>
+    <td><%= player.health() %></td>
+    <td><%= player.inventory.weapon() %></td>
+    <td><%= player.inventory.armour() %></td>
+    <td><%= player.inventory.potions() %></td>
+    <td><form action="/players/<%= player.id %>/edit" method="get">
+      <input type="submit" value="Update <%= player.name %>'s Information">
+    </form></td>
+    <td><form action="/players/<%= player.id %>/delete" method="post">
+      <input type="submit" value="Remove <%= player.name %>">
+    </form></td>
+  </tr>
+  <%end%>
+</table>
+<br>
+<br>
+<h3>Initiate a new turn! Select the option below to update all characters</h3>
+<form action="/players/edit" method="get">
+  <input type="submit" value="Update Characters">
 </form>
-
-<form action="/players/new" method="get">
-  <input type="submit" value="Create New Character">
-</form>
-<hr />
-
-<% @players.each do |player| %>
-
-<form action="/players/<%= player.id %>/edit" method="get">
-  <input type="submit" value="Update Character Information">
-</form>
-
-
-<p>Name: <%= player.name() %> </p>
-
-<p>Race: <%= player.race() %> </p>
-
-<p>Class: <%= player.class()%> </p>
-
-<p>Health: <%= player.health() %> </p>
-
-<p>Weapon: <%= player.inventory.weapon() %></p>
-<p>Armour: <%= player.inventory.armour() %></p>
-<p>Potions: <%= player.inventory.potions() %></p>
-
-<form action="/players/<%= player.id %>/delete" method="post">
-  <input type="submit" value="Remove Character">
-</form>
-
-<hr />
-<%end%>
+<br>
+<br>
