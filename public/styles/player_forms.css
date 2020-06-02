@@ -1,5 +1,5 @@
 td, th {
-  text-align: left;
+  text-align: center;
 }
 
 td {
@@ -14,10 +14,12 @@ th {
 
 table {
   border-collapse: collapse;
+  padding-left 200px;
 }
 
 tr {
   transition: all 0.3s;
+  align-self: center;
 }
 
 tr:hover {

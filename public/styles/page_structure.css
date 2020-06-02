@@ -10,8 +10,10 @@ body {
 }
 
 #content {
+  border: 2px solid grey;
   background: rgba(192, 192, 192, 0.5);
   background-size: cover;
   margin-left: 100px;
   margin-right: 100px;
+  border-radius: 70px;
 }

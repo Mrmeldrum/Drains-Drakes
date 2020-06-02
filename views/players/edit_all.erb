@@ -10,7 +10,8 @@
 
   <label for="weapon">Weapon: </label>
   <input id="weapon" type="text" name="<%="#{player.id}[weapon]"%>" value="<%= player.inventory.weapon %>">
-
+<br>
+<br>
   <label for="armour">Armour: </label>
   <input id="armour" type="text" name="<%="#{player.id}[armour]"%>" value="<%= player.inventory.armour %>">
 
@@ -20,6 +21,7 @@
   <input type="hidden" name="<%="#{player.id}[id]"%>" value="<%=player.id%>">
 
  <%end%>
-
+<br>
+<br>
  <input type="submit" value="Update Character">
 </form>

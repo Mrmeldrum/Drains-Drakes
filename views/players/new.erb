@@ -1,6 +1,10 @@
+<br>
+<h1>Creat a new character</h1>
+<h4>For inspiration on which items and stats to begin, please feel free to use the resources at the bottom of the page!</h4>
 <form action="/players" method="post">
   <label for="name">Character Name: </label>
   <input id="name" type="text" name="name">
+<br>
 <br>
   <label for="race">Race: </label>
   <select id="race" name="race">
@@ -11,28 +15,41 @@
     <option value="Elf">Elf</option>
     <option value="Halfling">Halfling</option>
   </select>
-<br>
+
   <label for="class">Class: </label>
   <select name="class" id="class">
-    <option value="Warrior">Warrior</option>
+    <option value="Barbarian">Barbarian</option>
     <option value="Paladin">Paladin</option>
-    <option value="Mage">Mage</option>
-    <option value="Thief">Thief</option>
-    <option value="Priest">Priest</option>
-    <option value="Hunter">Hunter</option>
+    <option value="Rogue">Rogue</option>
+    <option value="Bard">Bard</option>
+    <option value="Cleric">Cleric</option>
+    <option value="Sorcerer">Sorcerer</option>
   </select>
+<br>
 <br>
   <label for="health">Enter max health: </label>
   <input id= "health" type="number" name="health">
 <br>
+<br>
   <label for="weapon">Weapon: </label>
   <input id="weapon" type="text" name="weapon">
-<br>
+
   <label for="armour">Armour: </label>
   <input id="armour" type="text" name="armour">
-<br>
+
   <label for="potions">Potions: </label>
   <input id="potions" type="text" name="potions">
 <br>
+<br>
   <input type="submit" value="Submit Character">
 </form>
+<br>
+
+<nav>
+  <p class="link"><a href="https://en.wikipedia.org/wiki/Barbarian_(Dungeons_%26_Dragons)">The Barbarian</a></p>
+  <p class="link"><a href="https://en.wikipedia.org/wiki/Paladin_(Dungeons_%26_Dragons)">The Paladin</a></p>
+  <p class="link"><a href="https://en.wikipedia.org/wiki/Rogue_(Dungeons_%26_Dragons)">The Rogue</a></p>
+  <p class="link"><a href="https://en.wikipedia.org/wiki/Bard_(Dungeons_%26_Dragons)">The Bard</a></p>
+  <p class="link"><a href="https://en.wikipedia.org/wiki/Cleric_(Dungeons_%26_Dragons)">The Cleric</a></p>
+  <p class="link"><a href="https://en.wikipedia.org/wiki/Sorcerer_(Dungeons_%26_Dragons)">The Sorcerer</a></p>
+</nav>
