@@ -10,35 +10,39 @@
 </div>
 <br>
 
-<table align="center" class="player">
-  <tr>
-    <th>Name</th>
-    <th>Race</th>
-    <th>Class</th>
-    <th>Health</th>
-    <th>Weapon</th>
-    <th>Armour</th>
-    <th>Potions</th>
-    <th>Update Character</th>
-    <th>Delete Character</th>
-  </tr>
-  <% @players.each do |player| %>
-  <tr>
-    <td><%= player.name() %></td>
-    <td><%= player.race() %></td>
-    <td><%= player.class()%></td>
-    <td><%= player.health() %></td>
-    <td><%= player.inventory.weapon() %></td>
-    <td><%= player.inventory.armour() %></td>
-    <td><%= player.inventory.potions() %></td>
-    <td><form action="/players/<%= player.id %>/edit" method="get">
-      <input type="submit" value="Update <%= player.name %>'s Information">
-    </form></td>
-    <td><form action="/players/<%= player.id %>/delete" method="post">
-      <input type="submit" value="Remove <%= player.name %>">
-    </form></td>
-  </tr>
-  <%end%>
+<table class="fixed_header" align="center">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Race</th>
+      <th>Class</th>
+      <th>Health</th>
+      <th>Weapon</th>
+      <th>Armour</th>
+      <th>Potions</th>
+      <th>Update Character</th>
+      <th>Delete Character</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+    <tr>
+      <td><%= player.name() %></td>
+      <td><%= player.race() %></td>
+      <td><%= player.class()%></td>
+      <td><%= player.health() %></td>
+      <td><%= player.inventory.weapon() %></td>
+      <td><%= player.inventory.armour() %></td>
+      <td><%= player.inventory.potions() %></td>
+      <td><form action="/players/<%= player.id %>/edit" method="get">
+        <input type="submit" value="Update <%= player.name %>'s Information">
+      </form></td>
+      <td><form action="/players/<%= player.id %>/delete" method="post">
+        <input type="submit" value="Remove <%= player.name %>">
+      </form></td>
+    </tr>
+    <%end%>
+  </tbody>
 </table>
 <br>
 <br>

@@ -3,18 +3,20 @@ td, th {
 }
 
 td {
-  padding: 3px;
+  padding: 2px;
   border: 0.5px black solid;
+  font-weight: bold;
 }
 
 th {
   padding: 0px 20px 10px 0px;
   border-bottom: 1px solid papayawhip;
+  font-weight: bold;
 }
 
 table {
   border-collapse: collapse;
-  padding-left 200px;
+  font-size: 18px;
 }
 
 tr {
@@ -25,3 +27,40 @@ tr {
 tr:hover {
   background-color: rgba(255,255,255,0.5);
 }
+
+
+/* #tables-flow
+{
+ width: 100px;
+height: 200px;
+overflow: scroll;
+} */
+/*
+.fixed_header{
+    width: 400px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 400px;
+  overflow: auto;
+  height: 300px;
+}
+
+.fixed_header thead tr {
+   display: block;
+   width: 400px;
+}
+
+.fixed_header thead {
+  background: black;
+  color:#fff;
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 400px;
+} */
