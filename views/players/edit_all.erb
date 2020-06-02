@@ -1,8 +1,9 @@
-<h1>Please update health below, as well as any items acquired or used</h1>
+<h1>Update the party below</h1>
 
 <form action="/players/edit_all" method="post">
-<% for player in @players %>
 
+<% for player in @players %>
+<hr/>
   <h2>Character: <%= player.name %> the <%= player.race %> <%= player.class %></h2>
 
   <label for="health">Current Health: </label>
@@ -19,9 +20,9 @@
   <input id="potions" tpe="text" name="<%="#{player.id}[potions]"%>" value="<%= player.inventory.potions %>">
 
   <input type="hidden" name="<%="#{player.id}[id]"%>" value="<%=player.id%>">
-
+<br>
+<br>
  <%end%>
 <br>
-<br>
- <input type="submit" value="Update Character">
+ <input type="submit" value="Update All Characters">
 </form>
