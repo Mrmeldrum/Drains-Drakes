@@ -1,5 +1,6 @@
 require_relative( '../db/sql_runner' )
 
+
 class Inventory
 
   attr_reader :id

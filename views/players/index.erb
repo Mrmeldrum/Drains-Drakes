@@ -1,9 +1,5 @@
 <h1>Player Characters</h1>
 <div>
-  <form action="/players/new_party" method="post">
-    <input type="submit" value="Begin New Group">
-  </form>
-
   <form action="/players/new" method="get">
     <input type="submit" value="Create New Character">
   </form>
@@ -49,6 +45,11 @@
 <h3>Initiate a new turn! Select the option below to update all characters</h3>
 <form action="/players/edit" method="get">
   <input type="submit" value="Update Characters">
+</form>
+<br>
+<h3>Wipe the current party of characters and start anew?</h3>
+<form action="/players/new_party" method="post">
+  <input type="submit" value="Begin New Group">
 </form>
 <br>
 <br>
